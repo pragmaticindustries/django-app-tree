@@ -17,7 +17,7 @@ show_missing = true
 # https://github.com/nedbat/coveragepy
 [tool.coverage.run]
 omit = [
-    "*/package/__main__.py",
+    "*/django_app_tree/__main__.py",
 ]
 
 # https://pycqa.github.io/isort/
@@ -32,7 +32,7 @@ skip_gitignore = true
 # https://docs.pytest.org/en/6.2.x/reference.html#command-line-flags
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--verbose --doctest-modules -ra --cov package"  # Consider adding --pdb
+addopts = "--verbose --doctest-modules -ra --cov django_app_tree"  # Consider adding --pdb
 doctest_optionflags = "IGNORE_EXCEPTION_DETAIL"
 testpaths = [
     "tests",
@@ -41,7 +41,7 @@ testpaths = [
 # https://python-semantic-release.readthedocs.io/en/latest/
 [tool.semantic_release]
 branch = "main"
-version_variable = "src/package/__init__.py:__version__"
+version_variable = "src/django_app_tree/__init__.py:__version__"
 upload_to_pypi = false
 commit_subject = "Release v{version}"
 changelog_file = "CHANGELOG.md"

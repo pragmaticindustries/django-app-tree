@@ -18,9 +18,9 @@ sys.path.insert(0, os.path.abspath("../../src"))
 
 # -- Project information -----------------------------------------------------
 
-project = "Package"
-copyright = "2021, Package"
-author = ""
+project = "django-app-tree"
+copyright = "2022, pragamtic industries GmbH"
+author = "pragamtic industries GmbH"
 
 
 # -- General configuration ---------------------------------------------------

@@ -2,7 +2,7 @@
 
 from hypothesis import given, strategies
 
-from package.something import Something
+from django_app_tree.something import Something
 
 
 @given(strategies.booleans())

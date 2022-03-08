@@ -47,3 +47,22 @@ To get the full picture of all relations, just call:
 ```
 
 BUT beware... you might not like what you see :)
+
+## Development
+
+Install the pre-commit hooks:
+
+```
+pre-commit install
+pre-commit install --hook-type commit-msg
+pre-commit install --hook-type pre-push
+```
+
+Local python setup:
+
+```
+python3.10 -m venv .
+source ./bin/activate
+pip install --upgrade pip
+pip install --editable .[dev,test,docs]
+```

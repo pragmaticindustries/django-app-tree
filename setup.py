@@ -13,7 +13,7 @@ with open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     README = fh.read()
 with open(os.path.join(here, "LICENSE.md"), encoding="utf-8") as fh:
     LICENSE = fh.read()
-with open(os.path.join(src, "package", "__init__.py"), encoding="utf-8") as fh:
+with open(os.path.join(src, "django_app_tree", "__init__.py"), encoding="utf-8") as fh:
     module = ast.parse(next(filter(lambda line: line.startswith("__version__"), fh)))
     assign = typing.cast(ast.Assign, module.body[0])
     # See also: https://github.com/relekang/python-semantic-release/issues/388
@@ -22,13 +22,13 @@ with open(os.path.join(src, "package", "__init__.py"), encoding="utf-8") as fh:
 # https://packaging.python.org/guides/distributing-packages-using-setuptools/#setup-args
 # https://docs.python.org/3/distutils/apiref.html#distutils.core.setup
 setuptools.setup(
-    name="package",
+    name="django_app_tree",
     version=VERSION,
     description="",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://project.url/",
-    author="Author",
+    author="pragmatic industries GmbH",
     author_email="author@email",
     maintainer="Maintainer",
     maintainer_email="maintainer@email",
@@ -38,13 +38,14 @@ setuptools.setup(
         "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",
         "Natural Language :: English",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache Software License",
+        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
-    python_requires=">=3.9",
+    python_requires=">=3.8",
     keywords="",
     project_urls={
         "Homepage": "https://foo.bar/",
@@ -73,7 +74,7 @@ setuptools.setup(
         ],
         "docs": ["sphinx==4.4.0"],
     },
-    entry_points={"console_scripts": ["something = package.__main__:main"]},
+    entry_points={"console_scripts": ["something = django_app_tree.__main__:main"]},
     options={},
     platforms="",
     zip_safe=False,
