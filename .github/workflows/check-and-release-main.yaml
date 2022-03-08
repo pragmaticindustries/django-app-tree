@@ -1,0 +1,47 @@
+# When pushing to main, we run checks and then release.
+
+name: Check and Release
+on:
+  push:
+    branches:
+    - main
+jobs:
+  check:
+    name: Check Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ['3.9', '3.10']
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install .[test,dev]
+    - name: Run flake8
+      run: flake8 src tests
+    - name: Run pylint
+      run: pylint src tests
+    - name: Run mypy
+      run: mypy src tests
+    - name: Run pytest
+      run: python -W always::DeprecationWarning -m pytest
+  release:
+    needs: check
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Python Semantic Release
+      uses: relekang/python-semantic-release@v7.23.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pypi_token: ''  # We don't publish to PyPi: ${{ secrets.PYPI_TOKEN }}
