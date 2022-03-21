@@ -1,4 +1,4 @@
 name: CodeQL config
 
 paths:
-- src/package
+- src/django_app_tree

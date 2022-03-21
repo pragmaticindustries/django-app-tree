@@ -1,5 +1,5 @@
-recursive-include src/package *
-recursive-exclude src/package/**/__pycache__ *
+recursive-include src/django_app_tree *
+recursive-exclude src/django_app_tree/**/__pycache__ *
 
 exclude .gitignore .pre-commit-config.yaml .flake8
 exclude CHANGELOG.md MANIFEST.in UPSTREAM_README.md UPSTREAM_CHANGELOG.md
