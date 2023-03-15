@@ -114,7 +114,6 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS("dot file generated successfully:"))
         self.stdout.write("----------------------------------------------------")
         self.stdout.write(dot_file)
-        self.stdout.write("----------------------------------------------------")
 
     def create_template_tree(self):
         templates = set()

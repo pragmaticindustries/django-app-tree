@@ -42,6 +42,6 @@ testpaths = [
 [tool.semantic_release]
 branch = "main"
 version_variable = "src/django_app_tree/__init__.py:__version__"
-upload_to_pypi = false
+upload_to_pypi = true
 commit_subject = "Release v{version}"
 changelog_file = "CHANGELOG.md"
