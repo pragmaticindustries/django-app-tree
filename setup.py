@@ -27,11 +27,11 @@ setuptools.setup(
     description="",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://project.url/",
+    url="https://github.com/pragmaticindustries/django-app-tree",
     author="pragmatic industries GmbH",
-    author_email="author@email",
-    maintainer="Maintainer",
-    maintainer_email="maintainer@email",
+    author_email="info@pragmaticindustries.de",
+    maintainer="pragmatic industries GmbH",
+    maintainer_email="info@pragmaticindustries.de",
     license=LICENSE,
     # https://pypi.org/classifiers/
     classifiers=[
@@ -48,7 +48,7 @@ setuptools.setup(
     python_requires=">=3.8",
     keywords="",
     project_urls={
-        "Homepage": "https://foo.bar/",
+        "Homepage": "https://github.com/pragmaticindustries/django-app-tree",
     },
     packages=setuptools.find_packages(where="src"),
     package_dir={"": "src"},
